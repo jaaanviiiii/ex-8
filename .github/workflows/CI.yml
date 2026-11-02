@@ -7,7 +7,7 @@ on:
   jobs:
     train-and-test:
       runs-on: ubuntu-latest
-    steps:
+      steps:
       - name: Download project code
         uses: actions/checkout@v4
 
