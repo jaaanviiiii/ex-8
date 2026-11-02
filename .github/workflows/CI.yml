@@ -8,15 +8,19 @@ on:
     train-and-test:
       runs-on: ubuntu-latest
     steps:
-      -name: Download project code
-      uses: action/checkout@v4
-      -name: Setup Python
-        uses: action/setup-python@v5
+      - name: Download project code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version:"3.11"
-        -name: Install Libraries
+
+      - name: Install Libraries
         run: pip install -r requirement.txt
-        -name:Train ML Model
-        run: python train.python
-        -name: ML Model Testing
-        run: python test.python
+
+      - name: Train ML Model
+        run: python train.py
+
+      - name: ML Model Testing
+        run: python test.py
